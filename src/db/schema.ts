@@ -2,7 +2,7 @@ import { relations } from "drizzle-orm";
 import { boolean, pgTable, text, uuid, timestamp } from "drizzle-orm/pg-core";
 
 export const files =  pgTable("files", {
-    id: uuid("id").primaryKey(),
+    id: uuid("id").defaultRandom().primaryKey(),
 
 
     name: text("name").notNull(),
