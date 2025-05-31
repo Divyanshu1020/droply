@@ -115,7 +115,7 @@ export default function SignUpForm() {
             Verify Your Email
           </h1>
           <p className="text-default-500 text-center">
-            We've sent a verification code to your email
+            We&apos;ve sent a verification code to your email
           </p>
         </CardHeader>
 
