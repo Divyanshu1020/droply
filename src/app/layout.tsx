@@ -1,16 +1,15 @@
+
 import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Providers } from "./providers";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import { Architects_Daughter } from "next/font/google";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const architectsDaughter = Architects_Daughter({
+  weight: "400",
   subsets: ["latin"],
+  variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
@@ -27,9 +26,9 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={` antialiased bg-background text-foreground ${architectsDaughter.className}`}
         >
-           <Providers>{children}</Providers>
+          <Providers>{children}</Providers>
         </body>
       </html>
     </ClerkProvider>

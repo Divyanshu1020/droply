@@ -51,6 +51,7 @@ export function Providers({ children, themeProps }: ProvidersProps) {
   const router = useRouter();
 
   return (
+    <NextThemesProvider {...themeProps}>
     <HeroUIProvider navigate={router.push}>
       <ImageKitProvider
         authenticator={authenticator}
@@ -59,9 +60,10 @@ export function Providers({ children, themeProps }: ProvidersProps) {
       >
         <ImageKitAuthContext.Provider value={{ authenticate: authenticator }}>
           <ToastProvider placement="top-right" />
-          <NextThemesProvider {...themeProps}>{children}</NextThemesProvider>
+          {children}
         </ImageKitAuthContext.Provider>
       </ImageKitProvider>
     </HeroUIProvider>
+    </NextThemesProvider>
   );
 }
